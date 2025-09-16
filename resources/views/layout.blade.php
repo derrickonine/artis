@@ -10,7 +10,9 @@
   <header class="navbar">
     <div class="logo">ArtisMaroc</div>
     <nav>
-      <a href="{{ route('welcome') }}">Accueil</a>
+      @guest
+  <a href="{{ route('welcome') }}">Accueil</a>
+@endguest
       <a href="{{ route('about') }}">À propos</a>
       <a href="{{ route('contact') }}">Contact</a>
       @auth
@@ -22,6 +24,7 @@
       @else
         <a href="{{ route('login') }}">Connexion</a>
       @endauth
+      
     </nav>
   </header>
 
